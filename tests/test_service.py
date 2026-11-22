@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 import json
+import pytest
 
 from app.config import WEB_APP, Settings
 from app.rag_banxico import service as rag_service
 from app.rag_banxico.service import BriefingBanxico, puntuar
+from app.rag_banxico.validacion import validar_seleccion
 
 
 class FakeDatabase:
@@ -75,7 +77,7 @@ def test_modelo_configurado_responde_solo_con_evidencia(monkeypatch) -> None:
 
         def read(self):
             return json.dumps(
-                {"choices": [{"message": {"content": "La tasa quedó en 6.25%."}}]}
+                {"choices": [{"message": {"content": seleccion_valida()}}]}
             ).encode("utf-8")
 
     monkeypatch.setattr(rag_service, "urlopen", lambda request, timeout: RespuestaFalsa())
@@ -86,8 +88,8 @@ def test_modelo_configurado_responde_solo_con_evidencia(monkeypatch) -> None:
     )
     resultado = servicio_llm.consultar("¿Cuál fue la decisión sobre la tasa?")
     assert resultado["mode"] == "llm-grounded"
-    assert "La tasa quedó en 6.25%." in resultado["answer"]
-    assert "[BM-2026-11-05]" in resultado["answer"]
+    assert "6.25%" in resultado["answer"]
+    assert "[BM-2026-11-05-TASA]" in resultado["answer"]
     assert resultado["vector_search"] is False
 
 
@@ -107,3 +109,27 @@ def test_modelo_que_falla_conserva_respuesta_extractiva(monkeypatch) -> None:
     assert resultado["mode"] == "extractiva-respaldo"
     assert resultado["evidence"]
     assert "6.25%" in resultado["answer"]
+
+
+def seleccion_valida():
+    chunk = servicio().corpus["chunks"][0]
+    return json.dumps({"evidence": [{"chunk_id": chunk["chunk_id"], "quote": chunk["content"]}]})
+
+
+def test_rechaza_una_fuente_existente_que_no_fue_recuperada():
+    chunks = servicio().corpus["chunks"]
+    bruto = json.dumps({"evidence": [{"chunk_id": chunks[1]["chunk_id"], "quote": chunks[1]["content"]}]})
+    with pytest.raises(ValueError, match="no recuperado"):
+        validar_seleccion(bruto, [chunks[0]])
+
+
+def test_rechaza_cifra_inventada_con_identificador_valido():
+    chunks = servicio().corpus["chunks"]
+    bruto = json.dumps({"evidence": [{"chunk_id": chunks[0]["chunk_id"], "quote": "La tasa quedó en 99 por ciento."}]})
+    with pytest.raises(ValueError, match="no es una cita literal"):
+        validar_seleccion(bruto, chunks)
+
+
+def test_no_agrega_fuentes_a_una_respuesta_libre():
+    with pytest.raises(ValueError):
+        validar_seleccion("La tasa quedó en 99 por ciento.", servicio().corpus["chunks"])

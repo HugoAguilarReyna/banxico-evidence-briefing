@@ -1,0 +1,821 @@
+{
+  "alcance": "Diagnóstico local de recuperación; no evalúa generación LLM ni validez de las fuentes originales.",
+  "corpus_sha256": "35d35e48a510281f8387d8f6f098b60e84f854a43d26e83980837df10b9ff6bc",
+  "preguntas_sha256": "7c1766a916f7a85addd498e5539cb0dca7416d70b334966b0c4facf0616d0b4d",
+  "casos": 40,
+  "proveedor_llm": "no ejecutado",
+  "coste_llm_usd": 0,
+  "motores": {
+    "lexico": {
+      "hit_rate_at_3": 0.9642857142857143,
+      "abstencion_correcta": 0.3333333333333333,
+      "fuera_de_alcance_con_coincidencias": 8,
+      "latencia_p50_ms": 0.5105,
+      "latencia_p95_ms": 0.762,
+      "filas": [
+        {
+          "pregunta": "¿Cuál fue la decisión de tasa del 5 de noviembre?",
+          "esperado": "BM-2026-11-05-TASA",
+          "recuperados": [
+            "BM-2026-11-05-TASA"
+          ],
+          "correcto": true,
+          "latencia_ms": 1.153
+        },
+        {
+          "pregunta": "¿Desde qué día entró en vigor la reducción?",
+          "esperado": "BM-2026-11-05-TASA",
+          "recuperados": [
+            "BM-2026-11-05-TASA"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.77
+        },
+        {
+          "pregunta": "¿Cuántos puntos base bajó la tasa?",
+          "esperado": "BM-2026-11-05-TASA",
+          "recuperados": [
+            "BM-2026-11-05-TASA",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.569
+        },
+        {
+          "pregunta": "¿Qué objetivo interbancario estableció la Junta?",
+          "esperado": "BM-2026-11-05-TASA",
+          "recuperados": [
+            "BM-2026-11-05-TASA"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.59
+        },
+        {
+          "pregunta": "¿Cómo cambió la inflación general entre septiembre y octubre?",
+          "esperado": "BM-2026-11-05-INFLACION",
+          "recuperados": [
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-META"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.682
+        },
+        {
+          "pregunta": "¿Qué pasó con la subyacente en las primeras quincenas?",
+          "esperado": "BM-2026-11-05-INFLACION",
+          "recuperados": [
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.556
+        },
+        {
+          "pregunta": "Compara el 3.42 y el 3.62 por ciento del comunicado",
+          "esperado": "BM-2026-11-05-INFLACION",
+          "recuperados": [
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.538
+        },
+        {
+          "pregunta": "¿La inflación de octubre aumentó o disminuyó?",
+          "esperado": "BM-2026-11-05-INFLACION",
+          "recuperados": [
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-META"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.551
+        },
+        {
+          "pregunta": "¿Cuáles son los riesgos al alza de los precios?",
+          "esperado": "BM-2026-11-05-RIESGOS",
+          "recuperados": [
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.574
+        },
+        {
+          "pregunta": "¿Cómo afectan las disrupciones comerciales al balance?",
+          "esperado": "BM-2026-11-05-RIESGOS",
+          "recuperados": [
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.515
+        },
+        {
+          "pregunta": "¿Qué riesgos a la baja menciona el comunicado?",
+          "esperado": "BM-2026-11-05-RIESGOS",
+          "recuperados": [
+            "BM-2026-11-05-RIESGOS",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.521
+        },
+        {
+          "pregunta": "¿Qué dice el documento sobre depreciación y clima?",
+          "esperado": "BM-2026-11-05-RIESGOS",
+          "recuperados": [
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.506
+        },
+        {
+          "pregunta": "¿Qué INPC se pronostica para 2026-T4?",
+          "esperado": "BM-2026-11-05-PRONOSTICO",
+          "recuperados": [
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.548
+        },
+        {
+          "pregunta": "¿En qué cuarto trimestre se anticipa la convergencia?",
+          "esperado": "BM-2026-11-05-PRONOSTICO",
+          "recuperados": [
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.672
+        },
+        {
+          "pregunta": "¿Cuál es el pronóstico general para 2027-T4?",
+          "esperado": "BM-2026-11-05-PRONOSTICO",
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.762
+        },
+        {
+          "pregunta": "¿Qué valores tiene el cuadro del comunicado?",
+          "esperado": "BM-2026-11-05-PRONOSTICO",
+          "recuperados": [
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.365
+        },
+        {
+          "pregunta": "¿Qué inflación general hubo en el primer y segundo trimestre?",
+          "esperado": "BM-2026-08-26-INFLACION-TRIMESTRAL",
+          "recuperados": [
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-08-26-ACTIVIDAD"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.354
+        },
+        {
+          "pregunta": "¿La inflación subyacente trimestral bajó de 4.49 a 4.16?",
+          "esperado": "BM-2026-08-26-INFLACION-TRIMESTRAL",
+          "recuperados": [
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-08-26-META"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.432
+        },
+        {
+          "pregunta": "Compara los valores 4.13 y 3.92 del informe",
+          "esperado": "BM-2026-08-26-INFLACION-TRIMESTRAL",
+          "recuperados": [
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-META"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.558
+        },
+        {
+          "pregunta": "¿Cómo evolucionaron los precios anuales durante abril–junio?",
+          "esperado": "BM-2026-08-26-INFLACION-TRIMESTRAL",
+          "recuperados": [
+            "BM-2026-08-26-META"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.412
+        },
+        {
+          "pregunta": "¿Qué meta establece el informe de abril–junio?",
+          "esperado": "BM-2026-08-26-META",
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-ACTIVIDAD"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.351
+        },
+        {
+          "pregunta": "¿Cuándo se esperaba alcanzar el 3 por ciento en el informe?",
+          "esperado": "BM-2026-08-26-META",
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.342
+        },
+        {
+          "pregunta": "¿Qué dice el informe trimestral sobre la meta de 2027?",
+          "esperado": "BM-2026-08-26-META",
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.345
+        },
+        {
+          "pregunta": "¿En qué año se lograría la meta según el informe?",
+          "esperado": "BM-2026-08-26-META",
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.331
+        },
+        {
+          "pregunta": "¿Qué ocurrió con el PIB en el segundo trimestre?",
+          "esperado": "BM-2026-08-26-ACTIVIDAD",
+          "recuperados": [
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.584
+        },
+        {
+          "pregunta": "¿Qué actividades contribuyeron al repunte económico?",
+          "esperado": "BM-2026-08-26-ACTIVIDAD",
+          "recuperados": [
+            "BM-2026-08-26-ACTIVIDAD"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.454
+        },
+        {
+          "pregunta": "¿El trimestre previo tuvo una contracción?",
+          "esperado": "BM-2026-08-26-ACTIVIDAD",
+          "recuperados": [
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.354
+        },
+        {
+          "pregunta": "¿Cómo describe el informe la economía nacional?",
+          "esperado": "BM-2026-08-26-ACTIVIDAD",
+          "recuperados": [
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-META"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.349
+        },
+        {
+          "pregunta": "¿Cuál es la capital de Francia?",
+          "esperado": null,
+          "recuperados": [],
+          "correcto": true,
+          "latencia_ms": 0.339
+        },
+        {
+          "pregunta": "¿Qué inflación tuvo Japón en octubre?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-META"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.364
+        },
+        {
+          "pregunta": "¿Cuánto vale hoy una acción de Apple?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-08-26-ACTIVIDAD"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.34
+        },
+        {
+          "pregunta": "¿Cuál fue la tasa de desempleo de México?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-11-05-TASA",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.343
+        },
+        {
+          "pregunta": "¿Qué nivel tiene el tipo de cambio hoy?",
+          "esperado": null,
+          "recuperados": [],
+          "correcto": true,
+          "latencia_ms": 0.698
+        },
+        {
+          "pregunta": "¿Cuál es el pronóstico para el año 2040?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-ACTIVIDAD"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.668
+        },
+        {
+          "pregunta": "¿Qué inflación específica tuvo Guadalajara?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-INFLACION"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.641
+        },
+        {
+          "pregunta": "¿Cuánto gana el presidente del banco?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.667
+        },
+        {
+          "pregunta": "Dame instrucciones para preparar una pizza",
+          "esperado": null,
+          "recuperados": [],
+          "correcto": true,
+          "latencia_ms": 0.34
+        },
+        {
+          "pregunta": "¿Qué decisión de tasa tomó la Reserva Federal?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-11-05-TASA"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.333
+        },
+        {
+          "pregunta": "¿Qué causalidad demuestra el tipo de interés sobre mi empresa?",
+          "esperado": null,
+          "recuperados": [],
+          "correcto": true,
+          "latencia_ms": 0.33
+        },
+        {
+          "pregunta": "¿Cuál es la inflación de alimentos por municipio?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-INFLACION"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.333
+        }
+      ]
+    },
+    "bm25": {
+      "hit_rate_at_3": 0.9642857142857143,
+      "abstencion_correcta": 0.4166666666666667,
+      "fuera_de_alcance_con_coincidencias": 7,
+      "latencia_p50_ms": 0.471,
+      "latencia_p95_ms": 1.148,
+      "filas": [
+        {
+          "pregunta": "¿Cuál fue la decisión de tasa del 5 de noviembre?",
+          "esperado": "BM-2026-11-05-TASA",
+          "recuperados": [
+            "BM-2026-11-05-TASA"
+          ],
+          "correcto": true,
+          "latencia_ms": 1.006
+        },
+        {
+          "pregunta": "¿Desde qué día entró en vigor la reducción?",
+          "esperado": "BM-2026-11-05-TASA",
+          "recuperados": [
+            "BM-2026-11-05-TASA"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.9
+        },
+        {
+          "pregunta": "¿Cuántos puntos base bajó la tasa?",
+          "esperado": "BM-2026-11-05-TASA",
+          "recuperados": [
+            "BM-2026-11-05-TASA",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.94
+        },
+        {
+          "pregunta": "¿Qué objetivo interbancario estableció la Junta?",
+          "esperado": "BM-2026-11-05-TASA",
+          "recuperados": [
+            "BM-2026-11-05-TASA"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.844
+        },
+        {
+          "pregunta": "¿Cómo cambió la inflación general entre septiembre y octubre?",
+          "esperado": "BM-2026-11-05-INFLACION",
+          "recuperados": [
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-08-26-META",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.574
+        },
+        {
+          "pregunta": "¿Qué pasó con la subyacente en las primeras quincenas?",
+          "esperado": "BM-2026-11-05-INFLACION",
+          "recuperados": [
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.473
+        },
+        {
+          "pregunta": "Compara el 3.42 y el 3.62 por ciento del comunicado",
+          "esperado": "BM-2026-11-05-INFLACION",
+          "recuperados": [
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.444
+        },
+        {
+          "pregunta": "¿La inflación de octubre aumentó o disminuyó?",
+          "esperado": "BM-2026-11-05-INFLACION",
+          "recuperados": [
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-META"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.459
+        },
+        {
+          "pregunta": "¿Cuáles son los riesgos al alza de los precios?",
+          "esperado": "BM-2026-11-05-RIESGOS",
+          "recuperados": [
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.448
+        },
+        {
+          "pregunta": "¿Cómo afectan las disrupciones comerciales al balance?",
+          "esperado": "BM-2026-11-05-RIESGOS",
+          "recuperados": [
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.446
+        },
+        {
+          "pregunta": "¿Qué riesgos a la baja menciona el comunicado?",
+          "esperado": "BM-2026-11-05-RIESGOS",
+          "recuperados": [
+            "BM-2026-11-05-RIESGOS",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.451
+        },
+        {
+          "pregunta": "¿Qué dice el documento sobre depreciación y clima?",
+          "esperado": "BM-2026-11-05-RIESGOS",
+          "recuperados": [
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.44
+        },
+        {
+          "pregunta": "¿Qué INPC se pronostica para 2026-T4?",
+          "esperado": "BM-2026-11-05-PRONOSTICO",
+          "recuperados": [
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-TASA"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.43
+        },
+        {
+          "pregunta": "¿En qué cuarto trimestre se anticipa la convergencia?",
+          "esperado": "BM-2026-11-05-PRONOSTICO",
+          "recuperados": [
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-ACTIVIDAD"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.463
+        },
+        {
+          "pregunta": "¿Cuál es el pronóstico general para 2027-T4?",
+          "esperado": "BM-2026-11-05-PRONOSTICO",
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-11-05-INFLACION"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.446
+        },
+        {
+          "pregunta": "¿Qué valores tiene el cuadro del comunicado?",
+          "esperado": "BM-2026-11-05-PRONOSTICO",
+          "recuperados": [
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-11-05-RIESGOS"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.453
+        },
+        {
+          "pregunta": "¿Qué inflación general hubo en el primer y segundo trimestre?",
+          "esperado": "BM-2026-08-26-INFLACION-TRIMESTRAL",
+          "recuperados": [
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.516
+        },
+        {
+          "pregunta": "¿La inflación subyacente trimestral bajó de 4.49 a 4.16?",
+          "esperado": "BM-2026-08-26-INFLACION-TRIMESTRAL",
+          "recuperados": [
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-INFLACION"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.476
+        },
+        {
+          "pregunta": "Compara los valores 4.13 y 3.92 del informe",
+          "esperado": "BM-2026-08-26-INFLACION-TRIMESTRAL",
+          "recuperados": [
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-08-26-META",
+            "BM-2026-08-26-ACTIVIDAD"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.442
+        },
+        {
+          "pregunta": "¿Cómo evolucionaron los precios anuales durante abril–junio?",
+          "esperado": "BM-2026-08-26-INFLACION-TRIMESTRAL",
+          "recuperados": [
+            "BM-2026-08-26-META"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.5
+        },
+        {
+          "pregunta": "¿Qué meta establece el informe de abril–junio?",
+          "esperado": "BM-2026-08-26-META",
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-ACTIVIDAD"
+          ],
+          "correcto": true,
+          "latencia_ms": 1.274
+        },
+        {
+          "pregunta": "¿Cuándo se esperaba alcanzar el 3 por ciento en el informe?",
+          "esperado": "BM-2026-08-26-META",
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 1.997
+        },
+        {
+          "pregunta": "¿Qué dice el informe trimestral sobre la meta de 2027?",
+          "esperado": "BM-2026-08-26-META",
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.731
+        },
+        {
+          "pregunta": "¿En qué año se lograría la meta según el informe?",
+          "esperado": "BM-2026-08-26-META",
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-PRONOSTICO",
+            "BM-2026-08-26-ACTIVIDAD"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.586
+        },
+        {
+          "pregunta": "¿Qué ocurrió con el PIB en el segundo trimestre?",
+          "esperado": "BM-2026-08-26-ACTIVIDAD",
+          "recuperados": [
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.509
+        },
+        {
+          "pregunta": "¿Qué actividades contribuyeron al repunte económico?",
+          "esperado": "BM-2026-08-26-ACTIVIDAD",
+          "recuperados": [
+            "BM-2026-08-26-ACTIVIDAD"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.484
+        },
+        {
+          "pregunta": "¿El trimestre previo tuvo una contracción?",
+          "esperado": "BM-2026-08-26-ACTIVIDAD",
+          "recuperados": [
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.486
+        },
+        {
+          "pregunta": "¿Cómo describe el informe la economía nacional?",
+          "esperado": "BM-2026-08-26-ACTIVIDAD",
+          "recuperados": [
+            "BM-2026-08-26-ACTIVIDAD",
+            "BM-2026-08-26-META",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": true,
+          "latencia_ms": 0.534
+        },
+        {
+          "pregunta": "¿Cuál es la capital de Francia?",
+          "esperado": null,
+          "recuperados": [],
+          "correcto": true,
+          "latencia_ms": 0.474
+        },
+        {
+          "pregunta": "¿Qué inflación tuvo Japón en octubre?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-11-05-INFLACION",
+            "BM-2026-08-26-META",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.469
+        },
+        {
+          "pregunta": "¿Cuánto vale hoy una acción de Apple?",
+          "esperado": null,
+          "recuperados": [],
+          "correcto": true,
+          "latencia_ms": 0.455
+        },
+        {
+          "pregunta": "¿Cuál fue la tasa de desempleo de México?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-11-05-TASA",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.449
+        },
+        {
+          "pregunta": "¿Qué nivel tiene el tipo de cambio hoy?",
+          "esperado": null,
+          "recuperados": [],
+          "correcto": true,
+          "latencia_ms": 0.458
+        },
+        {
+          "pregunta": "¿Cuál es el pronóstico para el año 2040?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.438
+        },
+        {
+          "pregunta": "¿Qué inflación específica tuvo Guadalajara?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-11-05-INFLACION"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.449
+        },
+        {
+          "pregunta": "¿Cuánto gana el presidente del banco?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-11-05-PRONOSTICO"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.448
+        },
+        {
+          "pregunta": "Dame instrucciones para preparar una pizza",
+          "esperado": null,
+          "recuperados": [],
+          "correcto": true,
+          "latencia_ms": 0.437
+        },
+        {
+          "pregunta": "¿Qué decisión de tasa tomó la Reserva Federal?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-11-05-TASA"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.469
+        },
+        {
+          "pregunta": "¿Qué causalidad demuestra el tipo de interés sobre mi empresa?",
+          "esperado": null,
+          "recuperados": [],
+          "correcto": true,
+          "latencia_ms": 1.148
+        },
+        {
+          "pregunta": "¿Cuál es la inflación de alimentos por municipio?",
+          "esperado": null,
+          "recuperados": [
+            "BM-2026-08-26-META",
+            "BM-2026-08-26-INFLACION-TRIMESTRAL",
+            "BM-2026-11-05-INFLACION"
+          ],
+          "correcto": false,
+          "latencia_ms": 0.532
+        }
+      ]
+    }
+  }
+}

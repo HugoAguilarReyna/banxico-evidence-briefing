@@ -87,7 +87,7 @@ print(salida["evidence"][0]["chunk_id"])    # BM-2026-11-05-TASA
 5. **Respuesta** — sin modelo configurado, se concatenan los fragmentos
    recuperados y la salida se etiqueta `extractiva`. Con modelo configurado, se
    envía únicamente la evidencia recuperada y se exige citar `[BM-…]`; si el
-   proveedor falla, se conserva la respuesta extractiva.
+   proveedor falla o la selección no cumple el contrato literal, se conserva la respuesta extractiva.
 
 ### Modos de respuesta
 
@@ -165,3 +165,36 @@ las fuentes citadas.
 Convenciones y flujo de revisión en [`CONTRIBUTING.md`](CONTRIBUTING.md). Para
 reportar un problema de seguridad, usa los avisos privados descritos en
 [`SECURITY.md`](SECURITY.md).
+
+
+## Contrato de evidencia del briefing
+
+El modo `llm-grounded` acepta únicamente JSON con una lista `evidence` de
+`chunk_id` y `quote`. Cada cita debe ser literal y pertenecer a un fragmento
+realmente enviado al modelo. La respuesta pública se construye con esas citas;
+no se añaden referencias a prosa libre para hacerla pasar por verificada.
+Una selección vacía o inválida cae al respaldo extractivo. El contrato comprueba
+identidad y procedencia, no relevancia ni suficiencia para contestar la pregunta.
+Las pruebas usan un proveedor simulado; no certifican calidad de un modelo real.
+
+
+## Evaluación diagnóstica de recuperación
+
+```bash
+# Windows PowerShell: $env:PYTHONPATH = (Resolve-Path src).Path
+# Linux/macOS: export PYTHONPATH=src
+python research/evaluar_recuperacion.py
+```
+
+`research/preguntas.json` contiene 40 preguntas: 28 con un fragmento esperado y
+12 fuera de alcance. Se escribió durante esta corrección, por lo que no es un
+benchmark externo ni una evaluación independiente. El informe conserva hashes,
+casos fallidos y latencias locales. No llama a un LLM ni evalúa generación.
+
+Resultado inicial: ambos recuperadores incluyen el fragmento esperado en el top 3
+en 27/28 preguntas. El léxico devuelve coincidencias en 8/12 preguntas fuera de
+alcance y BM25 en 7/12. Una coincidencia léxica no demuestra que la pregunta esté
+cubierta; este límite permanece abierto. BM25 no se despliega como sustitución a
+partir de este conjunto pequeño. Las latencias no incluyen red, proveedor ni API.
+Se requiere un conjunto mayor revisado por otra persona y medir soporte y
+abstención de extremo a extremo antes de afirmar robustez general.
