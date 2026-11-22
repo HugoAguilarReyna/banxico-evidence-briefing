@@ -26,6 +26,17 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements-dev.txt
 
+      - name: Diagnóstico de recuperación sin proveedor
+        env:
+          PYTHONPATH: src
+        run: python research/evaluar_recuperacion.py
+
+      - name: Publicar diagnóstico (incluye fallos de calidad)
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostico-recuperacion
+          path: research/resultado_recuperacion.json
+
       - name: Ejecutar pruebas
         run: python -m pytest -q
 
